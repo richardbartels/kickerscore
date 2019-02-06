@@ -1,0 +1,8 @@
+FROM python:3.6-slim
+
+RUN mkdir /app
+COPY requirements.txt /app
+RUN pip install -r /app/requirements.txt
+COPY src/app.py /app
+
+CMD ["python", "/app/app.py"]
